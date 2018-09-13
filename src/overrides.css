@@ -1,0 +1,12 @@
+.prism-code {
+  border-left: none !important;
+  box-shadow: 0px 0px 0px 0px #fff, 0px 0px 0px 1px #dfdfdf !important;
+}
+
+.token.string,.token.char {
+  color: rebeccapurple;
+}
+
+.token.function {
+  color: maroon;
+}

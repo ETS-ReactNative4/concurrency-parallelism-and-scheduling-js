@@ -29,3 +29,36 @@ Cooperative vs Preemptive scheduling
 
 Isolation - avoid cascading failure
 Communication - avoid race conditions
+
+
+
+
+Event loop
+- Blocking
+- Data Races
+
+
+
+history
+ - batch processing / single program computers
+ - mainframes / multi-user systems - process level scheduling blocking I/O
+ - multi-core systems / hardware threading
+ -
+
+process
+  threads
+    fibers
+  coroutines
+  event-loop
+
+async "stack"
+
+intro to the event loop
+  tasks
+  timeouts
+  schedulers
+  promises
+
+web workers + node experimental workers
+
+atomics
