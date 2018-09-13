@@ -53,15 +53,15 @@ const originalProgs = (<Slide>
 
 const log = (...args) => () => console.log(...args);
 
-const callbacks = function () {
+const callbacks = (`
   button.addEventListener('click', function (event) {
     notifications.flash('Hello world!');
   });
 
   app.get('/hello', (req, res) => {
-    res.send(`Hello world!`);
+    res.send('Hello world!');
   });
-};
+`);
 
 const promises = `function dataView() {
   fetch('/data')
@@ -405,7 +405,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="callbacks_1">
           <Heading size={5}>Callbacks</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippetify(callbacks)} />
+          <CodePane textSize={25} lang="js" theme="external" source={callbacks} />
         </Slide>
         <Slide id="promises_1">
           <Heading size={5}>Promises</Heading>
