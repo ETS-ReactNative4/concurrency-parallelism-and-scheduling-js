@@ -270,7 +270,8 @@ export default class Presentation extends React.Component {
         <Slide id="infinate_tables_analogy">
           <BlockQuote>
             <Quote style={{color:'black', 'font-size': '1.5em'}}>
-              The JS concurrency model is like running a restaurant with infinite tables.
+              The JS concurrency model is like
+              running a restaurant with an infinite number of tables.
               You can seat as many customers as you can get, which is great,
               but you only have one cook</Quote>
             <Cite>Codefucius</Cite>
@@ -451,7 +452,8 @@ export default class Presentation extends React.Component {
         <Slide id="infinate_tables_analogy_2">
           <BlockQuote>
             <Quote style={{color:'black', 'font-size': '1.5em'}}>
-              The JS concurrency model is like running a restaurant with infinite tables.
+              The JS concurrency model is like
+              running a restaurant with an infinite number of tables.
               You can seat as many customers as you can get, which is great,
               but you only have one cook</Quote>
             <Cite>Codefucius</Cite>
