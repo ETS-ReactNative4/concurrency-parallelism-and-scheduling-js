@@ -443,6 +443,11 @@ export default class Presentation extends React.Component {
           <Heading size={5}>Select from many channels</Heading>
           <CodePane textSize={25} lang="js" theme="external" source={csp.playerSelectSimple} />
         </Slide>
+        <Slide id="select_implementation">
+          <Heading size={5}>Select implementation</Heading>
+          <CodePane textSize={25} lang="js" theme="external" source={csp.select} />
+          <CodePane textSize={25} lang="js" theme="external" source={csp.peek} />
+        </Slide>
         <Slide id="infinate_tables_analogy_2">
           <BlockQuote>
             <Quote style={{color:'black', 'font-size': '1.5em'}}>
