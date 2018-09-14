@@ -1,3 +1,12 @@
+body {
+  color: black !important;
+}
+
+ul {
+  text-align: center !important;
+  list-style: none;
+}
+
 .prism-code {
   border-left: none !important;
   box-shadow: 0px 0px 0px 0px #fff, 0px 0px 0px 1px #dfdfdf !important;
