@@ -189,19 +189,6 @@ export default class Presentation extends React.Component {
         <Slide id="parralel_vs_concurrent">
           <Image src="images/concurrent_vs_parallel.png" />
         </Slide>
-        <Slide id="tasks">
-          <Heading size={5}>Tasks all the way down</Heading>
-          <Layout>
-            <Image style={{ width: "40%" }} src="images/matrioshka.jpg" />
-            <List>
-              <ListItem>Process</ListItem>
-              <ListItem>Thread</ListItem>
-              <ListItem>Fiber</ListItem>
-              <ListItem>Function</ListItem>
-              <ListItem>Instruction</ListItem>
-            </List>
-          </Layout>
-        </Slide>
         <Slide id="trade_offs">
           <Heading size={5}>Trade-offs everywhere</Heading>
           <Layout>
@@ -216,7 +203,7 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
         <Slide id="reality">
-          <Image width="80%" src="images/theory-vs-practice.png" />
+          <Image width="90%" src="images/theory-vs-practice.png" />
         </Slide>
         <Slide id="meanwhile">
           <Heading size={3}>Meanwhile in a parralel universe...</Heading>
@@ -224,8 +211,8 @@ export default class Presentation extends React.Component {
         <Slide id="mother_of_all_demos">
           <Heading size={5}>The original hyper-media</Heading>
           <Layout>
-            <Image width="40%" src="images/mouse.gif" />
-            <Image width="40%" src="images/hyper-media.gif" />
+            <Image width="45%" src="images/mouse.gif" />
+            <Image width="45%" src="images/hyper-media.gif" />
           </Layout>
         </Slide>
         <Slide id="fast_forward">
@@ -290,9 +277,9 @@ export default class Presentation extends React.Component {
           <div>JS thread has limited control over the system</div>
           <Image src="images/archibald-event-loop.png" />
           <List style={{ 'text-align': 'left !important'}}>
-            <ListItem style={{ 'font-size': '1.15em !important' }}>⏳ Push ready timer callbacks to the task queue</ListItem>
+            <ListItem style={{ 'font-size': '1.15em !important' }}>⏳ Execute the oldest ready timer callback</ListItem>
             <ListItem style={{ 'font-size': '1.15em !important' }}>📩 Execute the oldest task in the task queue</ListItem>
-            <ListItem style={{ 'font-size': '1.15em !important' }}>🎨 Conditionally execute rendering phase</ListItem>
+            <ListItem style={{ 'font-size': '1.15em !important' }}>🎨 Conditionally execute all rendering callbacks</ListItem>
           </List>
         </Slide>
         <Slide id="browser_scheduling">
@@ -402,11 +389,11 @@ export default class Presentation extends React.Component {
         <Slide id="workers_1">
           <Heading size={5}>(Web) workers</Heading>
           <List>
-            <ListItem>Separate event loop and realms</ListItem>
+            <ListItem>Separate, parallel event loop</ListItem>
             <ListItem>Async message passing</ListItem>
             <ListItem>Limited access to DOM, I/O</ListItem>
             <ListItem>Limited shared memory</ListItem>
-            <ListItem>Full support in browsers</ListItem>
+            <ListItem>Good support in browsers</ListItem>
             <ListItem>Experimental in Node 10</ListItem>
           </List>
           <Notes>
@@ -455,7 +442,6 @@ export default class Presentation extends React.Component {
         <Slide id="select_implementation">
           <Heading size={5}>Select implementation</Heading>
           <CodePane textSize={30} lang="js" theme="external" source={csp.select} />
-          <CodePane textSize={30} lang="js" theme="external" source={csp.peek} />
         </Slide>
         <Slide id="infinate_tables_analogy_2">
           <BlockQuote>

@@ -43,10 +43,11 @@ self.onmessage = (message) => {
 };`;
 
 const observableActor =
-`const worker = new Worker('/worker.js');
-let worker$ = Rx.Observable.fromEvent(worker, 'message');
+`const pongWorker = new Worker('/worker.js');
+let pongs$ = fromEvent(worker, 'message');
 worker$
    .map(event => event.data)
+   .throttleTime(2000)
    .subscribe(msg => {
      console.log(msg);
      worker.postMessage('ping');

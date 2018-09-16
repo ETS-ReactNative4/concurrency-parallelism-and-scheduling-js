@@ -35,7 +35,7 @@ const theme = createTheme({
     });
 
 const calcStyles = (subject, { highlighted, only } ) => {
-  const style = { 'text-align': 'left' };
+  const style = { 'text-align': 'left', 'font-size': '1.2em', 'margin-bottom': '5px' };
   if (highlighted === undefined || highlighted === subject) {
     style.color = 'black';
   } else if (only) {
@@ -49,15 +49,15 @@ const calcStyles = (subject, { highlighted, only } ) => {
 
 const ConceptsSlide = React.forwardRef(({id, children,  ...otherProps}, ref) => (
   <Slide {...otherProps} ref={ref} id={id}>
-    <Heading style={calcStyles('scheduling', otherProps)} size={6} caps>Scheduling</Heading>
+    <Heading style={calcStyles('scheduling', otherProps)} size={5} caps>Scheduling</Heading>
     <div style={calcStyles('scheduling', otherProps)}><u>Priority</u>: which tasks should run next and for how long?</div>
     {otherProps.highlighted === 'scheduling' && otherProps.only && children}
     <br />
-    <Heading style={calcStyles('parralelism', otherProps)} size={6} caps>Parallelism</Heading>
+    <Heading style={calcStyles('parralelism', otherProps)} size={5} caps>Parallelism</Heading>
     <div style={calcStyles('parralelism', otherProps)}><u>Execution</u>: how many tasks can run at the same time?</div>
     {otherProps.highlighted === 'parralelism' && otherProps.only && children}
     <br />
-    <Heading style={calcStyles('concurrency', otherProps)} size={6} caps>Concurrency</Heading>
+    <Heading style={calcStyles('concurrency', otherProps)} size={5} caps>Concurrency</Heading>
     <div style={calcStyles('concurrency', otherProps)}><u>Coordination</u>: how do tasks communicate and share resources?</div>
     {otherProps.highlighted === 'concurrency' && otherProps.only && children}
   </Slide>));
