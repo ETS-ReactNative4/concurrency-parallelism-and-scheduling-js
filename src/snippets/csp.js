@@ -139,8 +139,7 @@ const playerSimple = `async function player(name, ch) {
     console.log(enemyMove);
     await sleep(2000);
     await put(ch, name);
-  }
-}`;
+  }}`;
 
 const game = `async function timedGame(ms) {
   const _game = { turns: channel(), end: channel() };

@@ -9,9 +9,10 @@ ajax('/data', (data) => {
 `);
 
 const eventCallbacks = (
-`setInterval(() => console.log('around each second'), 1000);
+`setInterval(
+  () => console.log('around each second'), 1000);
 
-button.addEventListener('click', function (event) {
+button.addEventListener('click', function (event){
   notifications.flash('Hello world!');
 });
 
@@ -23,8 +24,8 @@ const nestedCallbacks = (`function pollTopPlayerProfile() {
   ajax('/gamesite', (error, gameSite) => {
     ajax('/dota2', (error, dota2) => {
       ajax('/scoreboard', (error, topScores) => {
-        ajax(\`/profile/\${topScores[0].userId}\`, (player) =>
-          renderTopPlayer(player)
+        ajax(\`/profile/\${topScores[0].userId}\`,
+          (player) => renderTopPlayer(player)
         );
       });
     });
@@ -86,7 +87,12 @@ const generators = `function* numbersGenerator() {
     yield n;
     n += 1;
   }
-};`;
+};
+// using a generator
+const gen = numbersGenerator();
+gen.next(); // { value: 0, done: false }
+gen.next(); // { value: 1, done: false }
+`;
 
 const asyncGenerators = `async function* () {
   while (true) {
@@ -109,7 +115,8 @@ const commonSchedulers = `function () {
   console.log('SYNC');
 }`;
 
-const browserSchedulers = `setTimeout(() => console.log('⏳ My time has come!'));
+const browserSchedulers = `setTimeout(
+  () => console.log('⏳ My time has come!'));
 
 requestAnimationFrame(
   () => console.log('🎨 I'm an artist!'));
@@ -120,11 +127,12 @@ requestIdleCallback(
 const nodeSchedulers = (
 `setTimeout(() => console.log('⏳ Do it now!'));
 
-setImmediate(() => console.log('⚠️ on every tick'));
+setImmediate(() => console.log('⚠️ every tick'));
 
-fs.readFile(() => console.log('🦄 doing some I/O'));
+fs.readFile(() => console.log('🦄 I/O'));
 
-process.nextTick(() => console.log('🤘 microtasks'));`);
+process.nextTick(() =>
+  console.log('🤘 microtasks'));`);
 
 const infiniteLoop = `/* async */ function main() {
   while (true) {}

@@ -1,7 +1,6 @@
 const inefficientActor = `function actor(handler, initialState = {}) {
   const queue = [];
   let state = initialState;
-
   (function loop() {
     const event = dequeue(queue);
     if (event !== undefined) {
@@ -9,11 +8,8 @@ const inefficientActor = `function actor(handler, initialState = {}) {
     }
     setTimeout(loop);
   }());
-
   return {
-    send(message) {
-      enqueue(queue, message);
-    }
+    send(message) { enqueue(queue, message); }
   };
 };`;
 
@@ -35,17 +31,15 @@ const actor = (handler, initialState = {}) => {
 const workerActorsMain = `// main.js
 const actor = new Worker('/worker.js');
 actor.onmessage = (message) => {
-  setTimeout(() => {
-    actor.postMessage('ping');
-  }, 2000);
+  setTimeout(() => { actor.postMessage('ping');}
+  , 2000);
 };
 actor.postMessage('ping');`;
 
 const workerActorsWorker = `// worker.js
 self.onmessage = (message) => {
-  setTimeout(() => {
-    self.postMessage('pong');
-  }, 2000);
+  setTimeout(() => { self.postMessage('pong'); }
+  , 2000);
 };`;
 
 const observableActor =

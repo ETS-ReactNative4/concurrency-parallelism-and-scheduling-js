@@ -62,8 +62,8 @@ export default class Presentation extends React.Component {
           <Image src="images/histroy.png" />
           <Heading size={5}><u>short</u> and <u>inaccurate</u> History</Heading>
         </Slide>
-        <Slide id="in the beggining">
-          <Heading size={3}>in the beggining...</Heading>
+        <Slide id="in_the_beginning">
+          <Heading size={3}>in the beginning...</Heading>
         </Slide>
         <Slide id="batch_mode">
           <Heading size={5}>Batch mode</Heading>
@@ -186,6 +186,9 @@ export default class Presentation extends React.Component {
             <ListItem>Communicating Sequential Processes</ListItem>
           </List>
         </Slide>
+        <Slide id="parralel_vs_concurrent">
+          <Image src="images/concurrent_vs_parallel.png" />
+        </Slide>
         <Slide id="tasks">
           <Heading size={5}>Tasks all the way down</Heading>
           <Layout>
@@ -294,7 +297,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="browser_scheduling">
           <Heading size={5}>Browser scheduling</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.browserSchedulers} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.browserSchedulers} />
           <div style={{ "margin-top": "10px" }}>Output: ⏳🎨 or 🎨⏳ then 📩</div>
         </Slide>
         <Slide id="node_loop">
@@ -316,42 +319,42 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="node_scheduling">
           <Heading size={5}>Node.js scheduling</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.nodeSchedulers} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.nodeSchedulers} />
           <div style={{ "margin-top": "10px" }}>Output: 🤘⏳⚠️🦄</div>
         </Slide>
         <Slide id="blocking_the_event_loop">
           <Heading size={5}>Blocking the event loop</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.infiniteLoop} />
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.infiniteRecursion} />
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.infinitePromises} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.infiniteLoop} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.infiniteRecursion} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.infinitePromises} />
         </Slide>
         <Slide id="callbacks_2">
           <Heading size={5}>Callbacks: concurrency through events</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.eventCallbacks} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.eventCallbacks} />
         </Slide>
         <Slide id="callbacks_4">
           <Heading size={5}>Callback Hell</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.nestedCallbacks} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.nestedCallbacks} />
         </Slide>
         <Slide id="promises_1">
           <Heading size={5}>Promises</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.promises} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.promises} />
         </Slide>
         <Slide id="promises_2">
           <Heading size={5}>Promises</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.promiseOperations} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.promiseOperations} />
         </Slide>
         <Slide id="generators">
           <Heading size={5}>Generators</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.generators} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.generators} />
         </Slide>
         <Slide id="async_functions">
           <Heading size={5}>Async functions</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.asyncAwait} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.asyncAwait} />
         </Slide>
         <Slide id="observables">
           <Heading size={5}>Observables</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.observables} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.observables} />
         </Slide>
         <Slide id="coords_of_concur">
           <Image width="70%" src="images/observables.png" />
@@ -362,14 +365,15 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="async_stack">
           <Heading size={5}>Async "thread"</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={snippets.timeoutLoop} />
+          <CodePane textSize={30} lang="js" theme="external" source={snippets.timeoutLoop} />
         </Slide>
         <Slide id="actors_js">
           <Heading size={5}>Actors: The Erlang model</Heading>
           <Layout>
             <Image width="30%" src="images/elexir.png" />
             <List>
-              <ListItem>Independently executed</ListItem>
+              <ListItem>Independent - share nothing</ListItem>
+              <ListItem>Managed by a runtime</ListItem>
               <ListItem>Each Actor has an event-loop</ListItem>
               <ListItem>Asyncronous message passing</ListItem>
             </List>
@@ -380,20 +384,20 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="bad_actor">
           <Heading size={5}>Inefficient actors</Heading>
-            <CodePane textSize={25} lang="js" theme="external" source={actors.inefficientActor} />
+            <CodePane textSize={30} lang="js" theme="external" source={actors.inefficientActor} />
         </Slide>
         <Slide id="event_actor">
           <Heading size={5}>Event actors</Heading>
-            <CodePane textSize={25} lang="js" theme="external" source={actors.eventActors} />
+            <CodePane textSize={30} lang="js" theme="external" source={actors.eventActors} />
         </Slide>
         <Slide id="worker_actors">
           <Heading size={5}>Worker actors</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={actors.workerActorsMain} />
-          <CodePane textSize={25} lang="js" theme="external" source={actors.workerActorsWorker} />
+          <CodePane textSize={30} lang="js" theme="external" source={actors.workerActorsMain} />
+          <CodePane textSize={30} lang="js" theme="external" source={actors.workerActorsWorker} />
         </Slide>
         <Slide id="observable_worker">
           <Heading size={5}>Observable Workers</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={actors.observableActor} />
+          <CodePane textSize={30} lang="js" theme="external" source={actors.observableActor} />
         </Slide>
         <Slide id="workers_1">
           <Heading size={5}>(Web) workers</Heading>
@@ -414,8 +418,9 @@ export default class Presentation extends React.Component {
           <Layout>
             <Image src="images/golang.png" />
             <List>
+              <ListItem>Managed runtime</ListItem>
               <ListItem>Lightweight processes</ListItem>
-            <ListItem>Synchronous message passing through channels</ListItem>
+              <ListItem>Synchronous message passing through channels</ListItem>
           </List>
           </Layout>
           <Notes>
@@ -427,27 +432,30 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="channels_and_processes">
           <Heading size={5}>Channels and Processes</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={csp.channelSimple} />
-          <CodePane textSize={25} lang="js" theme="external" source={csp.processSimple} />
+          <CodePane textSize={30} lang="js" theme="external" source={csp.channelSimple} />
+          <CodePane textSize={30} lang="js" theme="external" source={csp.processSimple} />
         </Slide>
         <Slide id="csp_ping_pong">
           <Heading size={5}>CSP Ping Pong in JS</Heading>
-            <CodePane textSize={25} lang="js" theme="external" source={csp.playerSimple} />
-            <CodePane textSize={25} lang="js" theme="external" source={csp.gameSimple} />
+            <CodePane textSize={30} lang="js" theme="external" source={csp.playerSimple} />
+            <CodePane textSize={30} lang="js" theme="external" source={csp.gameSimple} />
         </Slide>
-        <Slide id="put_and_take">
-          <Heading size={5}>Put and Take</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={csp.putSimple} />
-          <CodePane textSize={25} lang="js" theme="external" source={csp.takeSimple} />
+        <Slide id="put">
+          <Heading size={5}>Putting items in a channel</Heading>
+          <CodePane textSize={30} lang="js" theme="external" source={csp.putSimple} />
+        </Slide>
+        <Slide id="take">
+          <Heading size={5}>Taking items from a channel</Heading>
+          <CodePane textSize={30} lang="js" theme="external" source={csp.takeSimple} />
         </Slide>
         <Slide id="select_operator">
           <Heading size={5}>Select from many channels</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={csp.playerSelectSimple} />
+          <CodePane textSize={30} lang="js" theme="external" source={csp.playerSelectSimple} />
         </Slide>
         <Slide id="select_implementation">
           <Heading size={5}>Select implementation</Heading>
-          <CodePane textSize={25} lang="js" theme="external" source={csp.select} />
-          <CodePane textSize={25} lang="js" theme="external" source={csp.peek} />
+          <CodePane textSize={30} lang="js" theme="external" source={csp.select} />
+          <CodePane textSize={30} lang="js" theme="external" source={csp.peek} />
         </Slide>
         <Slide id="infinate_tables_analogy_2">
           <BlockQuote>
