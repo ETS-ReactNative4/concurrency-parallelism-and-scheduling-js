@@ -23,6 +23,10 @@ import snippets from './snippets';
 import actors from './snippets/actors';
 import csp from './snippets/csp';
 
+import { channel, put, take, close, select } from './csp/csp-new';
+
+window.csp = { channel, put, take, close, select };
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -59,8 +63,8 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide id="history">
           <Heading size={5}>Let's start with some</Heading>
-          <Image src="images/histroy.png" />
-          <Heading size={5}><u>short</u> and <u>inaccurate</u> History</Heading>
+          <Image width="40%" src="images/rado.jpg" />
+          <Heading size={5}><u>short</u> and <u>inaccurate</u> history</Heading>
         </Slide>
         <Slide id="in_the_beginning">
           <Heading size={3}>in the beginning...</Heading>
@@ -275,7 +279,7 @@ export default class Presentation extends React.Component {
         <Slide id="browser_loop">
           <Heading size={5}>The browser</Heading>
           <div>JS thread has limited control over the system</div>
-          <Image src="images/archibald-event-loop.png" />
+          <Image src="images/archibald-event-loop-1.png" />
           <List style={{ 'text-align': 'left !important'}}>
             <ListItem style={{ 'font-size': '1.15em !important' }}>⏳ Execute the oldest ready timer callback</ListItem>
             <ListItem style={{ 'font-size': '1.15em !important' }}>📩 Execute the oldest task in the task queue</ListItem>
@@ -308,6 +312,10 @@ export default class Presentation extends React.Component {
           <Heading size={5}>Node.js scheduling</Heading>
           <CodePane textSize={30} lang="js" theme="external" source={snippets.nodeSchedulers} />
           <div style={{ "margin-top": "10px" }}>Output: 🤘⏳⚠️🦄</div>
+        </Slide>
+        <Slide id="queues">
+          <Heading size={5}>Each queue handles tasks differently</Heading>
+          <Image src="images/queues.png" />
         </Slide>
         <Slide id="blocking_the_event_loop">
           <Heading size={5}>Blocking the event loop</Heading>
