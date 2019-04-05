@@ -1,6 +1,6 @@
 {
   "name": "my-hackconf-2018-deck",
-  "homepage": "https://debel.github.io/hackconf2018/",
+  "homepage": "https://debel.github.io/concurrency-parallelism-and-scheduling-js/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

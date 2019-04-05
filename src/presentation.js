@@ -390,10 +390,6 @@ export default class Presentation extends React.Component {
           <CodePane textSize={30} lang="js" theme="external" source={actors.workerActorsMain} />
           <CodePane textSize={30} lang="js" theme="external" source={actors.workerActorsWorker} />
         </Slide>
-        <Slide id="observable_worker">
-          <Heading size={5}>Observable Workers</Heading>
-          <CodePane textSize={30} lang="js" theme="external" source={actors.observableActor} />
-        </Slide>
         <Slide id="workers_1">
           <Heading size={5}>(Web) workers</Heading>
           <List>
@@ -407,6 +403,10 @@ export default class Presentation extends React.Component {
           <Notes>
             https://nodejs.org/api/worker_threads.html
           </Notes>
+        </Slide>
+        <Slide id="observable_worker">
+          <Heading size={5}>Observable Workers</Heading>
+          <CodePane textSize={30} lang="js" theme="external" source={actors.observableActor} />
         </Slide>
         <Slide id="csp_js">
           <Heading size={5}>The Go model - CSP</Heading>
